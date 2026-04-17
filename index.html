@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Analytics 4 (GA4) -->
+    <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JF8P9KBQK1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,30 +24,37 @@
 
     <!-- SEO Meta Tags -->
     <title>FoodExpress Goa | Fast Food Delivery in Mapusa & Goa</title>
-    <meta name="description" content="Order delicious food online from top restaurants in Mapusa & Goa. Fast, hot & contactless delivery with daily offers - 30% OFF, Buy 1 Get 1 Free & Free Delivery.">
+    <meta name="description" content="Order delicious food online from top restaurants in Mapusa & Goa. Fast, hot & contactless delivery with daily offers.">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             background-color: #ffffff;
             color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
         }
         h1 {
             color: #e23744;
-            font-size: 2.2rem;
-            margin: 40px 0 15px;
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
         }
         p {
-            font-size: 1.1rem;
-            max-width: 700px;
+            font-size: 1.05rem;
+            max-width: 680px;
             margin: 12px auto;
-            line-height: 1.6;
         }
         .offers {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: bold;
             margin: 20px 0;
             color: #e23744;
@@ -55,30 +62,51 @@
         img {
             max-width: 100%;
             width: 100%;
-            max-height: 420px;
             height: auto;
             border-radius: 12px;
-            margin: 30px auto;
+            margin: 25px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             display: block;
         }
         .btn {
-            background-color: #e23744;
-            color: white;
-            padding: 16px 32px;
-            font-size: 1.2rem;
+            display: inline-block;
+            width: 100%;
+            max-width: 320px;
+            padding: 16px 24px;
+            font-size: 1.15rem;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            margin: 15px 8px;
-            display: inline-block;
+            margin: 10px 8px;
+            font-weight: 600;
         }
-        .btn:hover {
+        .btn-order {
+            background-color: #e23744;
+            color: white;
+        }
+        .btn-order:hover {
             background-color: #c02c38;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
+        .btn-interest {
+            background-color: #28a745;
+            color: white;
+        }
+        .btn-interest:hover {
+            background-color: #218838;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.65rem;
+            }
+            p {
+                font-size: 1rem;
+            }
+            .btn {
+                font-size: 1.1rem;
+                padding: 14px 20px;
+            }
         }
     </style>
 </head>
@@ -97,22 +125,20 @@
         </p>
 
         <img src="https://i.postimg.cc/YC1nBPSq/8a761645-64a0-4fd0-a6a4-1e0593600f00.jpg" 
-             alt="FoodExpress Goa - Hot and fresh food delivery from top restaurants in Mapusa and Goa"
+             alt="FoodExpress Goa - Hot and fresh food delivery from top restaurants"
              loading="lazy">
 
-        <!-- Main Order Button -->
-        <button class="btn" onclick="window.location.href='https://foodexpress.com/order'" aria-label="Order food now">
+        <!-- Buttons -->
+        <button class="btn btn-order" onclick="window.location.href='https://foodexpress.com/order'">
             Order Now - Get 30% OFF
         </button>
 
-        <!-- New Analytics Tracking Button (No Redirect) -->
-        <button class="btn" onclick="trackInterest()" style="background-color: #28a745;">
+        <button class="btn btn-interest" onclick="trackInterest()">
             I'm Interested - Track My Visit
         </button>
     </div>
 
     <script>
-        // Function to send event to Google Analytics
         function trackInterest() {
             if (typeof gtag === 'function') {
                 gtag('event', 'button_click', {
@@ -121,8 +147,6 @@
                     value: 1
                 });
             }
-            
-            // Optional: Show a small message to user
             alert("Thank you! Your interest has been recorded. We'll show you better offers soon! 😊");
         }
     </script>
